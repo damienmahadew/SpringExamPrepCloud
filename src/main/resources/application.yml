@@ -1,0 +1,20 @@
+#Eureka server creation
+---
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+---
+#Discovery Client
+spring:
+  application:
+    name: users
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://regsvc.cfapps.io/eureka #Eureka server URL
